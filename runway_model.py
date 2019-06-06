@@ -16,7 +16,7 @@ def setup(opts):
 
 
 generate_inputs = {
-    'z': runway.vector(512, sampling_std=0.5),
+    'z': runway.vector(length=512, sampling_std=0.5),
     'truncation': runway.number(min=0, max=1, default=0.8, step=0.01)
 }
 
