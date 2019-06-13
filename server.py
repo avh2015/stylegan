@@ -18,17 +18,17 @@ parser.add_argument('key')
 app = Flask(__name__)
 api = Api(app)
 
-url_ffhq = 'https://drive.google.com/uc?id=1MEGjdvVpUsu1jB4zrXZN7Y4kBBOzizDQ'
+url_ffhq = 'https://drive.google.com/uc?id=1eYHcNrI_kLRfWnC9Kb8xbak6548vTuyt'
 
 _Gs_cache = dict()
-
+""" 
 
 def load_Gs(url):
     if url not in _Gs_cache:
         with dnnlib.util.open_url(url, cache_dir=config.cache_dir) as f:
             _G, _D, Gs = pickle.load(f)
         _Gs_cache[url] = Gs
-    return _Gs_cache[url]
+    return _Gs_cache[url] """
 
 
 global Gs
