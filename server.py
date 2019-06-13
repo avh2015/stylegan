@@ -33,7 +33,7 @@ def load_Gs(url):
 
 global Gs
 tflib.init_tf()
-with dnnlib.util.open_url(url, cache_dir=config.cache_dir) as f:
+with dnnlib.util.open_url(url_ffhq, cache_dir=config.cache_dir) as f:
     _G, _D, Gs = pickle.load(f)
 
 """
