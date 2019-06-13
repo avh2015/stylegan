@@ -30,7 +30,7 @@ def load_Gs(url):
         _Gs_cache[url] = Gs
     return _Gs_cache[url]
 
-
+tflib.init_tf()
 faceModel = load_Gs(url_ffhq)
 
 """
@@ -75,5 +75,4 @@ class MyResource(Resource):
 api.add_resource(MyResource, '/generate')
 
 if __name__ == '__main__':
-    tflib.init_tf()
     app.run(host='0.0.0.0')
