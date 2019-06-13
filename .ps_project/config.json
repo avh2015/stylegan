@@ -1,0 +1,6 @@
+{
+  "machineType": "K80",
+  "container": "paperspace/stylegan",
+  "command": "Li9ydW4uc2g=",
+  "workspace": "https://github.com/designerkamal/stylegan.git"
+}
