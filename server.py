@@ -30,8 +30,11 @@ def load_Gs(url):
         _Gs_cache[url] = Gs
     return _Gs_cache[url]
 
+
+global Gs
 tflib.init_tf()
-faceModel = load_Gs(url_ffhq)
+with dnnlib.util.open_url(url, cache_dir=config.cache_dir) as f:
+    _G, _D, Gs = pickle.load(f)
 
 """
 @runway.setup(options={'checkpoint': runway.file(extension='.pkl')})
@@ -65,9 +68,9 @@ class MyResource(Resource):
         args = parser.parse_args()
         truncation = 0.8
         rnd = np.random.RandomState(int(1000*random.random()))
-        latents = rnd.randn(1, faceModel.input_shape[1])
-        images = faceModel.run(latents, None, truncation_psi=truncation,
-                               randomize_noise=False, output_transform=fmt)
+        latents = rnd.randn(1, Gs.input_shape[1])
+        images = Gs.run(latents, None, truncation_psi=truncation,
+                        randomize_noise=False, output_transform=fmt)
         output = np.clip(images[0], 0, 255).astype(np.uint8)
         return {'image': output}
 
