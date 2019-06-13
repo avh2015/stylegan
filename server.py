@@ -1,12 +1,11 @@
 import os
-import random
-import config
 import pickle
-import tensorflow as tf
+import random
 import numpy as np
 import dnnlib.tflib as tflib
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
+import config
 
 fmt = dict(func=tflib.convert_images_to_uint8, nchw_to_nhwc=True)
 
