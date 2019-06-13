@@ -3,6 +3,8 @@ import pickle
 import random
 import numpy as np
 import tensorflow as tf
+import PIL.Image
+import dnnlib
 import dnnlib.tflib as tflib
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
