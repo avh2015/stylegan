@@ -1,6 +1,6 @@
 {
   "machineType": "K80",
-  "container": "paperspace/stylegan",
-  "command": "cHl0aG9uIHNlcnZlci5weQ==",
+  "container": "ufoym/deepo:all-py36",
+  "command": "cGlwIGluc3RhbGwgZmxhc2sgZmxhc2tfcmVzdGZ1bCAmJiBweXRob24gc2VydmVyLnB5",
   "workspace": "https://github.com/designerkamal/stylegan.git"
 }
