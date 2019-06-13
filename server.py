@@ -68,7 +68,7 @@ class MyResource(Resource):
         args = parser.parse_args()
         truncation = 0.8
         rnd = np.random.RandomState(int(1000*random.random()))
-        latents = rnd.randn(1, Gs.input_shape[1])
+        latents = rnd.randn(1, *Gs.input_shapes[0][1:])
         images = Gs.run(latents, None, truncation_psi=truncation,
                         randomize_noise=False, output_transform=fmt)
         output = np.clip(images[0], 0, 255).astype(np.uint8)
