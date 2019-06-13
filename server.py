@@ -4,6 +4,7 @@ import tensorflow as tf
 import dnnlib.tflib as tflib
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
+import random
 import os
 import config
 
@@ -61,7 +62,7 @@ class MyResource(Resource):
     def get(self):
         args = parser.parse_args()
         truncation = 0.8
-        rnd = np.random.RandomState(5)
+        rnd = np.random.RandomState(int(1000*random.random()))
         latents = rnd.randn(1, faceModel.input_shape[1])
         images = faceModel.run(latents, None, truncation_psi=truncation,
                                randomize_noise=False, output_transform=fmt)
