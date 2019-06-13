@@ -1,6 +1,6 @@
 {
   "machineType": "K80",
-  "container": "tensorflow/tensorflow:latest-gpu-py3",
+  "container": "ufoym/deepo:all-py36-cu100",
   "command": "cGlwIGluc3RhbGwgLXIgcmVxdWlyZW1lbnRzLnR4dCAmJiBweXRob24gc2VydmVyLnB5",
   "workspace": "https://github.com/designerkamal/stylegan.git"
 }
